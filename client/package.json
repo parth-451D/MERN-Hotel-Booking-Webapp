@@ -17,6 +17,7 @@
     "react-scripts": "4.0.3",
     "react-spinners": "^0.11.0",
     "react-stripe-checkout": "^2.6.3",
+    "styled-components": "^5.3.5",
     "sweetalert2": "^11.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -44,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:4000/"
 }

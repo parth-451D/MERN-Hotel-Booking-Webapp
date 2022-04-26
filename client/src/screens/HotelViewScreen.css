@@ -1,0 +1,154 @@
+.wrapper {
+    background-image: url("../bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 480px;
+    position: relative;
+  }
+  
+  .wrapper .text {
+    background: #525252;
+    padding: 50px;
+    width: 40%;
+    height: 605px;
+    position: absolute;
+    top: -13%;
+    right: 10%;
+    padding-top: 10%;
+    color: white;
+  }
+  
+  .wrapper .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+  }
+  
+  .wrapper h2 {
+    font-weight: 400;
+  }
+  
+  .wrapper p {
+    margin: 20px 0 50px 0;
+    line-height: 30px;
+  }
+  
+  .wrapper i {
+    margin: 5px 20px 0 0;
+  }
+  #top {
+      margin-top:6rem;
+  }
+
+  /* new */
+
+  .Room img {
+    width: 100%;
+    min-height: 250px;
+}
+.Room .roomInfo {
+    max-width: 1200px;
+    display: flex;
+    margin: 27rem auto 0 auto;
+}
+.Room .roomInfo .infoLeft {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Room .roomInfo .infoLeft .info {
+    display: flex;
+    flex-wrap: wrap;
+}
+.Room .roomInfo .infoLeft .info div {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+.Room .roomInfo .infoLeft .infoIcons ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.Room .roomInfo .infoLeft .infoIcons ul li {
+    width: 100px;
+    margin: 10px 0;
+}
+.Room .roomInfo .infoLeft .infoIcons ul li .itemIcon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+    font-size: 1.6rem;
+    border: 1px solid #e6e6e6;
+    color: #88807e;
+}
+.Room .roomInfo .infoLeft .infoIcons ul li .itemShow:hover {
+    cursor: pointer;
+}
+.Room .roomInfo .infoLeft .infoIcons ul li p {
+    margin-top: 8px;
+}
+.Room .roomInfo .infoRight {
+    flex-basis: 50%;
+}
+.Room .roomInfo .infoRight h2 {
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+.header-main{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    left: 0;
+    margin-top: 4rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#hotel-head h2{
+    display: block;
+    margin-top: 6rem;
+    font-size: 5.5em;
+}
+#desc{
+    font-size: 3em !important;
+}
+.roomsdiv{
+    margin-top: 27rem !important;
+}
+@media only screen and (max-width: 1200px) {
+    .Room .roomInfo {
+        margin: 0;
+        padding: 3rem 1rem;
+   }
+}
+@media only screen and (max-width: 768px) {
+    .Room .desc_main {
+        margin: 2rem 0 0 0;
+   }
+    .Room .roomInfo {
+        flex-direction: column;
+   }
+    .Room .roomInfo .infoLeft .info div {
+        padding-right: 1rem;
+   }
+    .Room .roomInfo .infoLeft .infoIcons ul li {
+        width: 80px;
+   }
+    .Room .roomInfo .infoRight {
+        margin-top: 2rem;
+   }
+}
+@media only screen and (max-width: 480px) {
+    .Room .roomInfo .infoLeft .infoIcons ul li {
+        width: 70px;
+   }
+    .Room .roomInfo .infoLeft .infoIcons ul li .itemIcon {
+        width: 45px;
+        height: 45px;
+   }
+}

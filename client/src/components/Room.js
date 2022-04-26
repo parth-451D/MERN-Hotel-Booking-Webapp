@@ -11,13 +11,13 @@ function Room({ room, fromDate, toDate }) {
   return (
     <div className="row bs">
       <div className="col-md-4">
-        <img src={room.imageurls[0]} className="smallimg" alt="" />
+        <img src="https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/160243538.jpg?k=f10ed683641e81119166aa72983e90e4a662b184ca9f3efa3d8efbb641392033&o=" className="smallimg" alt="" />
       </div>
       <div className="col-md-7">
         <h1>{room.name}</h1>
         <b>
           <p>Max Count : {room.maxcount}</p>
-          <p>Phone Number : {room.phonenumber}</p>
+          <p>Rent Per : 5000</p>
           <p>Type : {room.type}</p>
         </b>
 
@@ -47,7 +47,7 @@ function Room({ room, fromDate, toDate }) {
                     className="d-block w-100 bigimg"
                     src={url}
                     alt="First slide"
-                  />
+                  /> 
                 </Carousel.Item>
               );
             })}

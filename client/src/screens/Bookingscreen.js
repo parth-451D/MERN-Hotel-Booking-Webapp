@@ -12,7 +12,7 @@ function Bookingscreen({ match }) {
   const [room, setRoom] = useState({});
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalDays, setTotalDays] = useState(0);
-
+  const hotelid = match.params.hotelid;
   const roomid = match.params.roomid;
   const fromdate = moment(match.params.fromdate, "DD-MM-YYYY");
   const todate = moment(match.params.todate, "DD-MM-YYYY");
@@ -130,7 +130,7 @@ function Bookingscreen({ match }) {
                 amount={totalAmount * 100}
                 currency="USD"
                 token={onToken}
-                stripeKey="YOUR PUBLIC STRIP API KEY"
+                stripeKey="pk_test_51KrKqWAkxZlmM5wV7xSljS5cdmnQ0dIDmcXuorxq04WAhK2yvz6zu63rkPYk9m3kAj4zubi7AIvZQ1LbusLrB694002rBG8std"
               >
                 <button className="btn btn-primary">Pay Now</button>
               </StripeCheckout>

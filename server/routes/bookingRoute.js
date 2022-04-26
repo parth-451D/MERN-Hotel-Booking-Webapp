@@ -1,7 +1,7 @@
 const express = require("express");
 const moment = require("moment");
-const stripe = require("stripe")("YOUR PRIVATE STRIP API KEY"); //
-const { v4: uuidv4 } = require("uuid"); //https://www.npmjs.com/package/uuid
+const stripe = require("stripe")("sk_test_51KrKqWAkxZlmM5wVJ4RalMGFCVIPaRhDMhmtgEEGi6JAjthCDCXagtJdWr14JUX1Al2fVXKE64i2mo5fhZjBIvJ600f0LcrRAB"); //
+const { v4: uuidv4 } = require("uuid"); 
 
 const router = express.Router();
 
@@ -52,9 +52,8 @@ router.post("/getbookingbyuserid", async (req, res) => {
 
 router.post("/bookroom", async (req, res) => {
   try {
-    const { room, userid, fromdate, todate, totalAmount, totaldays, token } =
+    const { room, userid,hotelid, fromdate, todate, totalAmount, totaldays, token } =
       req.body;
-
     try {
       //create customer
       const customer = await stripe.customers.create({
@@ -82,6 +81,7 @@ router.post("/bookroom", async (req, res) => {
             room: room.name,
             roomid: room._id,
             userid,
+            hotelid,
             fromdate: moment(fromdate).format("DD-MM-YYYY"),
             todate: moment(todate).format("DD-MM-YYYY"),
             totalamount: totalAmount,
@@ -113,5 +113,28 @@ router.post("/bookroom", async (req, res) => {
     return res.status(400).json({ message: error });
   }
 });
+
+
+router.get("/gethotelbookings/:id", async (req, res) => {
+  try {
+    const hotels = await Hotel.findById(req.params.id);
+    let booking_info_store = [];
+    const booking_info = hotels.booking_id; 
+    const len = hotels.booking_id.length;
+    for(i=len-1;i>=0;i--){
+      const temp = await Booking.findById(booking_info[i]);
+      if(temp != null){
+        booking_info_store.push(temp);
+      }
+      else{
+        continue;
+      }
+    }
+    res.send(booking_info_store);
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+});
+
 
 module.exports = router;

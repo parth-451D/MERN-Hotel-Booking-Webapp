@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Link } from "react-router-dom";
-
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Homescreen from "./screens/Homescreen";
@@ -10,6 +8,12 @@ import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import AdminScreen from "./screens/AdminScreen";
 import LandingScreen from "./screens/LandingScreen";
+import HotelViewScreen from "./screens/HotelViewScreen";
+import FinalHome from "./screens/FinalHome";
+import HotelsPage from "./screens/HotelsPage";
+import HotelView from "./screens/HotelView";
+import Footer from "./components/Footer";
+import MerchantScreen from "./screens/MerchantAdmin";
 
 function App() {
   return (
@@ -19,7 +23,7 @@ function App() {
         <Route path="/" exact component={LandingScreen} />
         <Route path="/home" exact component={Homescreen} />
         <Route
-          path="/book/:roomid/:fromdate/:todate"
+          path="/book/:hotelid/:roomid/:fromdate/:todate"
           exact
           component={Bookingscreen}
         />
@@ -28,7 +32,12 @@ function App() {
         <Route path="/profile" exact component={ProfileScreen} />
         <Route path="/bookings" exact component={ProfileScreen} />
         <Route path="/admin" exact component={AdminScreen} />
+        <Route path="/hotelview/:id" exact component={HotelView} />
+        <Route path="/hotels" exact component={HotelsPage} />
+        <Route path="/newhome" exact component={FinalHome} />
+        <Route path="/merchantadmin" exact component={MerchantScreen} />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
