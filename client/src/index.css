@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,7 +18,8 @@ code {
 }
 
 .navbar {
-  background-color: black !important;
+  background-color: #686868 !important;
+  position: sticky !important;
 }
 
 .nav-link {
@@ -52,7 +56,7 @@ h1 {
   border-radius: 5px !important;
   padding: 20px !important;
 }
-bs1{
+.bs1{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-top: 20px !important;
   border-radius: 5px !important; 
@@ -101,4 +105,32 @@ p {
   background-color: white !important;
   color: black !important;
   margin-top: 20px !important;
+}
+
+.login .register{
+  background-image: linear-gradient(to right, #abd5ff, #c6cacd);
+}
+.login-comp{
+  background-color: white;
+}
+
+.form-control{
+  margin-top:15px;
+}
+.tag{
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 3rem !important;
+}
+.register{
+  background-image: linear-gradient(to right, #abd5ff, #c6cacd);
+  height: 680px;
+}
+.regi{
+  background-color: white;
+}
+
+.hotel-font{
+  font-family: 'Cinzel', serif !important;
+  font-size: 3rem !important;
+  color: white !important;
 }

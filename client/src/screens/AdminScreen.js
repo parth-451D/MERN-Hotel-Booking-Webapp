@@ -25,14 +25,17 @@ function AdminScreen() {
         <TabPane tab="Bookings" key="1">
           <AdminBookingScreen></AdminBookingScreen>
         </TabPane>
-        <TabPane tab="Rooms" key="2">
+        {/* <TabPane tab="Rooms" key="2">
           <AdminRoomScreen></AdminRoomScreen>
         </TabPane>
         <TabPane tab="Add Room" key="3">
           <AdminAddRoomScreen></AdminAddRoomScreen>
-        </TabPane>
+        </TabPane> */}
         <TabPane tab="Users" key="4">
           <AdminUserScreen></AdminUserScreen>
+        </TabPane>
+        <TabPane tab="Merchents" key="5">
+          <AdminRoomScreen></AdminRoomScreen>
         </TabPane>
       </Tabs>
     </div>

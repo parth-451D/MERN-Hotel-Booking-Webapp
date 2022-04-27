@@ -23,18 +23,19 @@ const tailLayout = {
 function MerchantAddRoom() {
   const { Option } = Select;
 
-  const [room, setRoom] = useState({});
+  const [room, setRoom] = useState({hotel_id: JSON.parse(localStorage.getItem("currentUser"))._id});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const [form] = Form.useForm();
 
-  const onFinish = async (values) => {
-    console.log(values);
+  const onFinish = async () => {
+    console.log(room);
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/rooms/addroom", values)).data;
+      const data = (await axios.post("/api/rooms/addroom", room)).data;
+      console.log(data);
       Swal.fire("Congratulations", "Your Room Added Successfully", "success");
       form.resetFields();
     } catch (error) {
@@ -45,6 +46,11 @@ function MerchantAddRoom() {
 
     setLoading(false);
   };
+
+  const onSetVlues = (values) => {
+    setRoom({ ...room, values});
+    onFinish();
+  }
 
   const onReset = () => {
     form.resetFields();
@@ -62,7 +68,7 @@ function MerchantAddRoom() {
             {...layout}
             form={form}
             name="control-hooks"
-            onFinish={onFinish}
+            onFinish={onSetVlues}
           >
             <Form.Item
               name="name"

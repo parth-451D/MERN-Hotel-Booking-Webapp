@@ -7,6 +7,7 @@ const router = express.Router();
 
 const Booking = require("../models/booking");
 const Room = require("../models/room");
+const Hotel = require("../models/hotel");
 
 router.post("/getallbookings", async (req, res) => {
   try {
@@ -51,17 +52,20 @@ router.post("/getbookingbyuserid", async (req, res) => {
 });
 
 router.post("/bookroom", async (req, res) => {
+  // console.log("body = ",req.body);
   try {
-    const { room, userid,hotelid, fromdate, todate, totalAmount, totaldays, token } =
+    const { room, userid, hotelid, fromdate, todate, totalAmount, totaldays, token } =
       req.body;
     try {
       //create customer
+      // console.log("token = ",token);
       const customer = await stripe.customers.create({
         email: token.email,
         source: token.id,
       });
 
       //charge payment
+      // console.log("customer = ",customer);
       const payment = await stripe.charges.create(
         {
           amount: totalAmount * 100,
@@ -76,6 +80,7 @@ router.post("/bookroom", async (req, res) => {
 
       //Payment Success
       if (payment) {
+        // console.log("paymrnt sucess");
         try {
           const newBooking = new Booking({
             room: room.name,
@@ -88,9 +93,9 @@ router.post("/bookroom", async (req, res) => {
             totaldays,
             transactionid: uuidv4(),
           });
-
+          // console.log("object success = ",newBooking)
           const booking = await newBooking.save();
-
+          // console.log("booking success = ",booking)
           const roomTmp = await Room.findOne({ _id: room._id });
           roomTmp.currentbookings.push({
             bookingid: booking._id,
@@ -101,6 +106,15 @@ router.post("/bookroom", async (req, res) => {
           });
 
           await roomTmp.save();
+          // console.log("room success = ",roomTmp)
+          const hotelTmp = await Hotel.findByIdAndUpdate(hotelid,
+            {
+              $push:  {booking_id:  booking._id},
+            },
+            { new: true }
+          );
+          // console.log("hotel success = ",hotelTmp)
+          // res.send(hotelTmp);
           res.send("Payment Successful, Your Room is booked");
         } catch (error) {
           return res.status(400).json({ message: error });

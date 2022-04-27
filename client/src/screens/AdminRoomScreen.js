@@ -11,28 +11,22 @@ function AdminRoomScreen() {
   const [error, setError] = useState("");
 
   const columns = [
-    {
-      title: "roomid",
-      dataIndex: "_id",
-      key: "_id",
-    },
+    { title: "userid", dataIndex: "_id", key: "_id" },
     {
       title: "name",
       dataIndex: "name",
       key: "name",
     },
-    { title: "maxcount", dataIndex: "maxcount", key: "maxcount" },
-    { title: "phonenumber", dataIndex: "phonenumber", key: "phonenumber" },
-    { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },
-    { title: "type", dataIndex: "type", key: "type" },
+    { title: "email", dataIndex: "m_email", key: "email" },
   ];
 
   async function fetchMyData() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/rooms/getallrooms")).data;
+      const data = (await axios.get("/api/hotels/getallhotels")).data;
       setRooms(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
       setError(error);

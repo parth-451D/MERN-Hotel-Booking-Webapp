@@ -41,9 +41,10 @@ function LoginScreen() {
 
         try{
           var result;
-          ischecked ? result = (await axios.post("/api/users/login", user)).data : result = (await axios.post("api/users/hotel-login", merchant)).data;
+          console.log(ischecked);
+          !ischecked ? result = (await axios.post("/api/users/login", user)).data : result = (await axios.post("api/users/hotel-login", merchant)).data;
           localStorage.setItem("currentUser", JSON.stringify(result));
-          window.location.href = "/home";
+          ischecked ? window.location.href = "/merchantadmin" : result.isAdmin ? window.location.href = "/admin" : window.location.href = "/newhome";
         }        catch (error) {
          console.log(error);
          setError("Invalid Credentials");

@@ -19,6 +19,7 @@ function MerchantScreen() {
 
   return (
     <div className="ml-3 mt-3 mr-3 bs">
+      {console.log("mer")}
       <h1 className="text-center">Merchant Panel</h1>
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Bookings" key="1">

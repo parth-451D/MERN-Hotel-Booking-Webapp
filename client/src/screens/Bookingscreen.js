@@ -51,9 +51,11 @@ function Bookingscreen({ match }) {
 
   const onToken = async (token) => {
     console.log(token);
+    console.log("hotelid = ", hotelid);
     const bookingDetails = {
       room,
       userid: JSON.parse(localStorage.getItem("currentUser"))._id,
+      hotelid,
       fromdate,
       todate,
       totalAmount,

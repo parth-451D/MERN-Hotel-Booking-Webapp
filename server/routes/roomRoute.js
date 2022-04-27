@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Hotel = require("../models/hotel");
 
 const Room = require("../models/room");
 
@@ -66,21 +67,21 @@ router.post("/addroom", async (req, res) => {
     const newRoom = req.body;
     console.log(req.body);
     const room = new Room();
-    room.name = newRoom.name;
-    room.maxcount = newRoom.maxcount;
-    room.phonenumber = newRoom.phonenumber;
-    room.rentperday = newRoom.rentperday;
-    room.type = newRoom.type;
-    room.description = newRoom.description;
+    room.name = newRoom.values.name;
+    room.maxcount = newRoom.values.maxcount;
+    room.phonenumber = newRoom.values.phonenumber;
+    room.rentperday = newRoom.values.rentperday;
+    room.type = newRoom.values.type;
+    room.description = newRoom.values.description;
     room.currentbookings = [];
-    if (newRoom.imageurl1 && newRoom.imageurl1.length > 0) {
-      room.imageurls.push(newRoom.imageurl1);
+    if (newRoom.values.imageurl1 && newRoom.values.imageurl1.length > 0) {
+      room.imageurls.push(newRoom.values.imageurl1);
     }
-    if (newRoom.imageurl2 && newRoom.imageurl2.length > 0) {
-      room.imageurls.push(newRoom.imageurl2);
+    if (newRoom.values.imageurl2 && newRoom.values.imageurl2.length > 0) {
+      room.imageurls.push(newRoom.values.imageurl2);
     }
-    if (newRoom.imageurl3 && newRoom.imageurl3.length > 0) {
-      room.imageurls.push(newRoom.imageurl3);
+    if (newRoom.values.imageurl3 && newRoom.values.imageurl3.length > 0) {
+      room.imageurls.push(newRoom.values.imageurl3);
     }
 
     const result = await room.save();

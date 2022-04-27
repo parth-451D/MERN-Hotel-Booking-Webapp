@@ -18,10 +18,10 @@ function Room({ hotel, fromDate, toDate, handleShow }) {
         <h1>{hotel.name}</h1>
         <b>
           <p>Rating : {hotel.star} star</p>
-          <p>
+          {/* <p>
             Description :
             <br /> {hotel.description}
-          </p>
+          </p> */}
           <p>Address : {hotel.address}</p>
         </b>
 

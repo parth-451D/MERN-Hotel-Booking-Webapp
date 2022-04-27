@@ -40,7 +40,7 @@ function MerchantBooking() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/bookings/gethotelbookings" + "62600b533f063cbd00cbc35c")).data;
+      const data = (await axios.get("/api/hotels/gethotelbookings/"+JSON.parse(localStorage.getItem("currentUser"))._id)).data;
       setBookings(data);
       console.log(data)
     } catch (error) {

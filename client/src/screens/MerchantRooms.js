@@ -31,8 +31,9 @@ function MerchantRooms() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/rooms/getallrooms")).data;
+      const data = (await axios.get("/api/hotels/gethotelrooms/"+JSON.parse(localStorage.getItem("currentUser"))._id)).data;
       setRooms(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
       setError(error);

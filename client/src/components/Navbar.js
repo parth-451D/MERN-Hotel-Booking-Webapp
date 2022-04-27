@@ -11,7 +11,7 @@ function Navbar() {
   const navAction = () => {
     if (user) {
       return (
-        <ul className="navbar-nav mr-5">
+        <ul className="navbar-nav mr-5 header">
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -39,7 +39,12 @@ function Navbar() {
     }
 
     return (
-      <ul className="navbar-nav">
+      <ul className="navbar-nav header">
+        <li className="nav-item active">
+          <a className="nav-link" href="/hotels">
+            Hotels
+          </a>
+        </li>
         <li className="nav-item active">
           <a className="nav-link" href="/register">
             Register
@@ -58,7 +63,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg">
         <a className="navbar-brand" href="/home">
-          MERN HOTEL BOOKING
+          COMFORT ROOMS
         </a>
         <button
           className="navbar-toggler"
