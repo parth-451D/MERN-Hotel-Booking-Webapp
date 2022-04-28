@@ -12,6 +12,11 @@ function Navbar() {
     if (user) {
       return (
         <ul className="navbar-nav mr-5 header">
+           <li className="nav-item active">
+          <a className="nav-link" href="/hotels">
+            Hotels
+          </a>
+        </li>
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"

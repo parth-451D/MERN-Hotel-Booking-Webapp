@@ -72,8 +72,8 @@ function HotelsPage() {
   // }
 
   return (
-    <div className="container">
-      <div className="row mt-5 bs">
+    <div className=" hotel" >
+      <div className="row bs">
         <div className="col-md-8">
           <input
             type="text"
@@ -101,7 +101,7 @@ function HotelsPage() {
         </div>
       </div>
 
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center ">
         {loading ? (
           <Loader></Loader>
         ) : error.length > 0 ? (

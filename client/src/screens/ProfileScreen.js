@@ -19,12 +19,12 @@ function ProfileScreen() {
   }
 
   return (
-    <div className="ml-3 mt-3">
+    <div className="ml-3 mt-3 prof">
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Profile" key="1">
           <div className="row">
             <div className="col-xs-12 ml-5 mb-5">
-              <div className="bs">
+              <div className="bs prof">
                 <p>My Profile</p>
                 <p>Name : {user.name}</p>
                 <p>Email : {user.email}</p>

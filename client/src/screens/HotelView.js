@@ -139,21 +139,21 @@ const HotelView = (hotel) => {
           : console.log(0)} */}
         <div className="header-content">
           <h2 className="alt-font">{hoteldata.name}</h2>
-          <p>{hoteldata.tagline}</p>          
+          <p>" {hoteldata.tagline} "</p>          
         </div>
       </header>
 
       <section className="desc">
-        <h1 className="alt-font">Be Captivated</h1>
-        <p>
+        <h1 className="desc-head">Choose Room</h1>
+        {/* <p>
           Choose between spectacular balcony views of The Villa or our resort’s
           private Beach Resort and Oceanside View, from the largest hotel rooms
           in Phuket.
-        </p>
+        </p> */}
       </section>
 
       <div className="row mt-5 bs">
-        <div className="col-md-3">
+        <div className="col-md-3 date">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
 
@@ -178,8 +178,8 @@ const HotelView = (hotel) => {
             }}
           >
             <option value="all">All</option>
-            <option value="delux">Delux</option>
-            <option value="non-delux">Non-Delux</option>
+            <option value="delux">Deluxe</option>
+            <option value="non-delux">Non-Deluxe</option>
           </select>
         </div>
       </div>
@@ -229,7 +229,7 @@ const HotelView = (hotel) => {
       {/* modal */}
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header>
-          <Modal.Title>hgfdsdfgh</Modal.Title>
+          <Modal.Title>Room Name</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Carousel prevLabel="" nextLabel="">
@@ -246,7 +246,7 @@ const HotelView = (hotel) => {
             })}
           </Carousel>
           {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p> */}
-          <h3>Room Type : delux</h3> <br />
+          <h3>Room Type : deluxe</h3> <br />
           <h2>Price : 5000 per day</h2>
         </Modal.Body>
         <Modal.Footer>

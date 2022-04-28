@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 .Rooms img {
     width: 100%;
     min-height: 250px;
@@ -13,8 +14,8 @@
 .Rooms .flex-row-lg {
     display: flex;
     flex-wrap: wrap;
-    margin: 3rem auto;
-    padding: 0 4rem;
+    /* margin: 3rem auto; */
+    /* padding: 0 4rem; */
 }
 .book{
     width: 33rem;
@@ -28,7 +29,7 @@
     text-align: center;
     margin: 2rem auto 0 auto;
     padding: 2rem;
-    background-color: #dbd5cd;
+    background-color: #f1f1f1;
 }
 .Rooms .flex-row-lg .card {
     margin: 2rem 2rem 0 2rem;
@@ -108,6 +109,28 @@
     line-height: 2;
     font-size: 1.8rem;
 }
-.header-content h2 , p {
+.header-content h2{
     z-index: 10;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 4.5rem;
+    color: white !important;
+}
+
+.header-content p{
+    z-index: 10;
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-size: 1.5rem !important;
+    color: white !important;
+}
+
+
+.Rooms{
+    background-image: linear-gradient(120deg, #ffffff 0%, #dfdfdf 100%);
+}
+
+.date{
+    margin-top: 1rem;
+}
+.desc .desc-head{
+    font-size: 2.5rem!important;
 }

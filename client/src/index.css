@@ -38,6 +38,9 @@ code {
   height: 260px;
   width: 100% !important;
   border-radius: 5px !important;
+  margin-top:17px;
+  margin-right: 17px;
+  margin-bottom: 17px;
 }
 
 h1 {
@@ -52,14 +55,15 @@ h1 {
 
 .bs {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-top: 20px !important;
+  /* margin-top: 20px !important; */
   border-radius: 5px !important;
-  padding: 20px !important;
+  padding: 20px !important; 
 }
 .bs1{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-top: 20px !important;
   border-radius: 5px !important; 
+  background-color : white !important;
 }
 
 .bigimg {
@@ -133,4 +137,21 @@ p {
   font-family: 'Cinzel', serif !important;
   font-size: 3rem !important;
   color: white !important;
+}
+
+.hotel-div{
+  background-color:white;
+}
+.hotel{
+  background-image: linear-gradient(120deg, #ffffff 0%, #e7e7e7 100%);
+}
+.raw{
+  margin:  0 !important;
+  padding: 0 !important;
+}
+.prof{
+  /* justify-content: center; */
+  /* height: 200px; */
+  margin-bottom: 11rem;
+  margin-right: 4rem;
 }
