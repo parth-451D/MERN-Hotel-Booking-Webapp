@@ -3,21 +3,27 @@ import { Modal, Button, Carousel } from "react-bootstrap";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import HotelView from "../screens/HotelView";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 function Room({ hotel, fromDate, toDate, handleShow }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
+  
   // const handleShow = () => setShow(true);
 // const hid = { hotel._id}
   return (
+
     <div className="row bs1 hotel-div">
       <div className="col-md-4">
         <img src={hotel.image} className="smallimg" alt="" />
       </div>
       <div className="col-md-7 mt-5">
-        <h1>{hotel.name}</h1>
+        <h1 className="h_head">{hotel.name}</h1>
         <b>
-          <p>Rating : {hotel.star} star</p>
+          <p className="rate">Rating : {hotel.star} <FontAwesomeIcon icon="fa-solid fa-star" />star</p>
           {/* <p>
             Description :
             <br /> {hotel.description}

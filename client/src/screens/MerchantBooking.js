@@ -54,7 +54,7 @@ function MerchantBooking() {
     fetchMyData();
   }, []);
   return (
-    <div className="row">
+    <div className="row" style={{marginBottom : "9rem"}}>
       {loading ? (
         <Loader></Loader>
       ) : error.length > 0 ? (

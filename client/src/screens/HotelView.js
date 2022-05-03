@@ -4,7 +4,7 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { Button, Carousel, Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import Error from "../components/Error";
 import HotelRoom from "../components/HotelRoom";
 import Loader from "../components/Loader";
@@ -48,9 +48,9 @@ const HotelView = (hotel) => {
       }
       setLoading(false);
 
-     const const2 = (await (axios.get("/api/hotels/gethotel/" + hid.id))).data;
-     console.log(const2);
-     setHoteldata(const2);
+      const const2 = (await axios.get("/api/hotels/gethotel/" + hid.id)).data;
+      console.log(const2);
+      setHoteldata(const2);
     }
 
     console.log(hid);
@@ -110,9 +110,10 @@ const HotelView = (hotel) => {
     console.log(type);
     if (type !== "all") {
       const tempRooms = duplicateRooms.filter(
-        (x) => x.type.toLowerCase() == type.toLowerCase()
+        (x) => x.type.toLowerCase() === type.toLowerCase()
       );
       setRooms(tempRooms);
+      console.log(tempRooms)
     } else {
       setRooms(duplicateRooms);
     }
@@ -139,7 +140,7 @@ const HotelView = (hotel) => {
           : console.log(0)} */}
         <div className="header-content">
           <h2 className="alt-font">{hoteldata.name}</h2>
-          <p>" {hoteldata.tagline} "</p>          
+          <p>" {hoteldata.tagline} "</p>
         </div>
       </header>
 
@@ -196,16 +197,18 @@ const HotelView = (hotel) => {
             );
           })
         )} */}
-        <section className="flex-row-lg">
-      {rooms.map((room) => {
-        return (
+      <section className="flex-row-lg">
+        {rooms.map((room) => {
+          return (
             <article className="card">
               {/* <Link to='/'> */}
               {fromDate && toDate && (
-            <Link  to={`/book/${hoteldata._id}/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn-alt book">Book Now</button>
-            </Link>
-          )}
+                <Link
+                  to={`/book/${hoteldata._id}/${room._id}/${fromDate}/${toDate}`}
+                >
+                  <button className="btn-alt book" style={{width:"49rem", fontWeight : "200"}}>Book Now</button>
+                </Link>
+              )}
               <button className="btn-alt" onClick={handleShow}>
                 EXPLORE
               </button>
@@ -215,17 +218,13 @@ const HotelView = (hotel) => {
                 <p>{room.description}</p>
               </div>
               <div className="img-container">
-                <img
-                  src={room.imageurls[0]}
-                  alt="image"
-                />
+                <img src={room.imageurls[0]} alt="image" />
                 {/* {console.log(rooms)} */}
               </div>
             </article>
-            
-            );
-          })}
-          </section>
+          );
+        })}
+      </section>
       {/* modal */}
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header>

@@ -44,7 +44,7 @@ function LoginScreen() {
           console.log(ischecked);
           !ischecked ? result = (await axios.post("/api/users/login", user)).data : result = (await axios.post("api/users/hotel-login", merchant)).data;
           localStorage.setItem("currentUser", JSON.stringify(result));
-          ischecked ? window.location.href = "/merchantadmin" : result.isAdmin ? window.location.href = "/admin" : window.location.href = "/newhome";
+          ischecked ? window.location.href = "/merchantadmin" : result.isAdmin ? window.location.href = "/admin" : window.location.href = "/home";
         }        catch (error) {
          console.log(error);
          setError("Invalid Credentials");
@@ -52,19 +52,11 @@ function LoginScreen() {
        }
        setLoading(false);
       }
-
-        // if(ischecked){
-        //   const result = (await axios.post("/api/users/login", user)).data;
-        // }else {
-        //   const result = (await axios.post("api/users/hotel-login", merchant)).data;
-        // }
-    //console.log(user);
-  
   return (
     <div>
       {loading && <Loader></Loader>}
 
-      <div className="row justify-content-center mt-5" style = {{paddingBottom : "16rem"}}>
+      <div className="row justify-content-center mt-5 " style = {{paddingBottom : "20rem"}}>
         <div className="col-md-5 mt-5" >
           {error.length > 0 && <Error msg={error}></Error>}
           <div className="bs" style = {{paddingBottom : "16rem"}}>

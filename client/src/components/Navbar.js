@@ -12,11 +12,11 @@ function Navbar() {
     if (user) {
       return (
         <ul className="navbar-nav mr-5 header">
-           <li className="nav-item active">
-          <a className="nav-link" href="/hotels">
-            Hotels
-          </a>
-        </li>
+            {user.isAdmin === undefined ? <></> : !user.isAdmin ? <li className="nav-item acive">
+            <a className="nav-link" href="/hotels">
+              Hotels
+            </a>
+          </li> : <></>}
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -30,12 +30,12 @@ function Navbar() {
               {user.name}
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/profile">
-                Profile
-              </a>
 
               <a className="dropdown-item" href="#" onClick={Logout}>
                 Logout
+              </a>
+              <a className="dropdown-item" href="/profile">
+                Profile
               </a>
             </div>
           </div>
@@ -45,11 +45,11 @@ function Navbar() {
 
     return (
       <ul className="navbar-nav header">
-        <li className="nav-item active">
+        {/* <li className="nav-item active">
           <a className="nav-link" href="/hotels">
             Hotels
           </a>
-        </li>
+        </li> */}
         <li className="nav-item active">
           <a className="nav-link" href="/register">
             Register

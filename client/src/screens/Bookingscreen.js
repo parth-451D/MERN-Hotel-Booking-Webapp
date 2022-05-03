@@ -99,7 +99,7 @@ function Bookingscreen({ match }) {
       ) : error.length > 0 ? (
         <Error msg={error}></Error>
       ) : (
-        <div className="row justify-content-center mt-5 bs">
+        <div className="row justify-content-center mt-5 bs" style={{marginBottom :"7rem", backgroundImage : "linear-gradient(to right, rgb(239 239 239), rgb(171 171 171))"}}>
           <div className="col-md-6">
             <h1>{room.name}</h1>
             <img src={room.imageurls[0]} alt="" className="bigimg" />

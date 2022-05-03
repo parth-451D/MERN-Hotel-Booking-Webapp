@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <BrowserRouter>
         <Route path="/" exact component={LandingScreen} />
-        <Route path="/home" exact component={Homescreen} />
+        {/* <Route path="/home" exact component={Homescreen} /> */}
         <Route
           path="/book/:hotelid/:roomid/:fromdate/:todate"
           exact
@@ -34,7 +34,7 @@ function App() {
         <Route path="/admin" exact component={AdminScreen} />
         <Route path="/hotelview/:id" exact component={HotelView} />
         <Route path="/hotels" exact component={HotelsPage} />
-        <Route path="/newhome" exact component={FinalHome} />
+        <Route path="/home" exact component={FinalHome} />
         <Route path="/merchantadmin" exact component={MerchantScreen} />
       </BrowserRouter>
       <Footer />

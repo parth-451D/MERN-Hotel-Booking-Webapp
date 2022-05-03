@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -36,11 +36,12 @@ code {
 
 .smallimg {
   height: 260px;
-  width: 100% !important;
+  width: 80% !important;
   border-radius: 5px !important;
-  margin-top:17px;
+  margin: 17px;
+  /* margin-top:17px;
   margin-right: 17px;
-  margin-bottom: 17px;
+  margin-bottom: 17px; */
 }
 
 h1 {
@@ -57,13 +58,13 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   /* margin-top: 20px !important; */
   border-radius: 5px !important;
-  padding: 20px !important; 
+  padding: 20px !important;
 }
-.bs1{
+.bs1 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-top: 20px !important;
-  border-radius: 5px !important; 
-  background-color : white !important;
+  border-radius: 5px !important;
+  background-color: white !important;
 }
 
 .bigimg {
@@ -111,45 +112,56 @@ p {
   margin-top: 20px !important;
 }
 
-.login .register{
+.login .register {
   background-image: linear-gradient(to right, #abd5ff, #c6cacd);
 }
-.login-comp{
+.login-comp {
   background-color: white;
 }
 
-.form-control{
-  margin-top:15px;
+
+.rating{
+  color: yellow;
 }
-.tag{
+
+.h_head {
+  font-family: fantasy;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+}
+
+.form-control {
+  margin-top: 15px;
+}
+.tag {
   font-family: "Montserrat", sans-serif !important;
   font-size: 3rem !important;
 }
-.register{
+.register {
   background-image: linear-gradient(to right, #abd5ff, #c6cacd);
   height: 680px;
 }
-.regi{
+.regi {
   background-color: white;
 }
 
-.hotel-font{
-  font-family: 'Cinzel', serif !important;
+.hotel-font {
+  font-family: "Cinzel", serif !important;
   font-size: 3rem !important;
   color: white !important;
 }
 
-.hotel-div{
-  background-color:white;
+.hotel-div {
+  background-color: white;
 }
-.hotel{
+.hotel {
   background-image: linear-gradient(120deg, #ffffff 0%, #e7e7e7 100%);
 }
-.raw{
-  margin:  0 !important;
+.raw {
+  margin: 0 !important;
   padding: 0 !important;
 }
-.prof{
+.prof {
   /* justify-content: center; */
   /* height: 200px; */
   margin-bottom: 11rem;

@@ -19,32 +19,27 @@ function ProfileScreen() {
   }
 
   return (
+    <div className="pro"  style={{backgroundImage : "linear-gradient(to right, #ffffff, #dbdbdb)", height : "44rem"}}>
+
     <div className="ml-3 mt-3 prof">
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs defaultActiveKey="1" onChange={callback} style={{marginBottom:"14rem"}}>
         <TabPane tab="Profile" key="1">
           <div className="row">
             <div className="col-xs-12 ml-5 mb-5">
-              <div className="bs prof">
-                <p>My Profile</p>
+              <div className="bs prof" style={{backgroundColor:"white"}}>
+                <p style={{ fontWeight : "700" , fontFamily : "cursive"}}>My Profile</p>
                 <p>Name : {user.name}</p>
-                <p>Email : {user.email}</p>
-                <p>
-                  IsAdmin :{" "}
-                  {user.isAdmin ? (
-                    <Tag color="green">YES</Tag>
-                  ) : (
-                    <Tag color="red">NO</Tag>
-                  )}
-                </p>
+                <p>Email : {user.isAdmin === undefined ? user.m_email : user.email}</p>
               </div>
             </div>
           </div>
         </TabPane>
-        <TabPane tab="Booking" key="2">
+        {user.isAdmin === undefined ? <></> : !user.isAdmin ? <TabPane tab="Booking" key="2">
           <MyBookingScreen></MyBookingScreen>
-        </TabPane>
+        </TabPane> : <></>}
       </Tabs>
     </div>
+                    </div>
   );
 }
 

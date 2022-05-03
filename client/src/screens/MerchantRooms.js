@@ -46,7 +46,7 @@ function MerchantRooms() {
   }, []);
 
   return (
-    <div className="row">
+    <div className="row" style={{marginBottom : "7rem"}}>
       {loading ? (
         <Loader></Loader>
       ) : error.length > 0 ? (

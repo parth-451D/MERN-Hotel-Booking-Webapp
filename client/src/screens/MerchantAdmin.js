@@ -18,14 +18,14 @@ function MerchantScreen() {
   }, []);
 
   return (
-    <div className="ml-3 mt-3 mr-3 bs">
+    <div className="ml-3 mt-3 mr-3 bs" style={{ backgroundImage : "linear-gradient(to right, #abd5ff, #c6cacd)"}} >
       {console.log("mer")}
       <h1 className="text-center">Merchant Panel</h1>
-      <Tabs defaultActiveKey="1" onChange={callback}>
-        <TabPane tab="Bookings" key="1">
+      <Tabs defaultActiveKey="1" onChange={callback} >
+        <TabPane tab="Bookings" key="1"  style={{marginBottom:"16rem"}}>
           <MerchantBooking />
         </TabPane>
-        <TabPane tab="Rooms" key="2">
+        <TabPane tab="Rooms" key="2" style={{marginBottom:"6rem"}}>
           <MerchantRooms />
         </TabPane>
         <TabPane tab="Add Room" key="3">
